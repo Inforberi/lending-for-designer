@@ -1,0 +1,262 @@
+.header {
+    position: relative;
+    padding-bottom: 100px;
+
+    @include tablet {
+        & {
+            padding-bottom: 8.2vw;
+        }
+    }
+
+    @include mobile {
+        & {
+            padding-bottom: vwm(50px);
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: -400px;
+        left: 35px;
+        width: 100%;
+        height: 800px;
+        background: linear-gradient(
+            10deg,
+            rgba(24, 24, 24, 0.2) 30%,
+            rgba(173, 0, 255, 0.2) 100%
+        );
+    }
+    @include laptop() {
+        &::before {
+            width: 100%;
+            height: 695px;
+
+            left: 0px;
+        }
+    }
+
+    @include tablet() {
+        &::before {
+            width: 100%;
+            height: 800px;
+
+            left: 0px;
+        }
+    }
+
+    &__title {
+        padding: 100px 0 129px;
+        position: relative;
+    }
+
+    &__title-head {
+        font-size: 5.625rem;
+        font-weight: 500;
+        line-height: 122%;
+    }
+
+    @include laptop() {
+        &__title {
+            padding-bottom: 140px;
+        }
+
+        &__title-head {
+            font-size: 4.5rem;
+        }
+    }
+
+    @include tablet() {
+        &__title {
+            padding-top: 10.204vw;
+            padding-bottom: 10.204vw;
+        }
+
+        &__title-head {
+            max-width: 250px;
+            font-size: 7.76vw;
+        }
+    }
+
+    @include mobile {
+        &__title {
+            padding-top: vwm(80px);
+            padding-bottom: vwm(75px);
+        }
+
+        &__title-head {
+            max-width: vwm(242px);
+            font-size: vwm(48px);
+        }
+    }
+
+    &__selected {
+        color: $main-color;
+    }
+
+    &__subtitle {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: $main-title-font-size;
+        font-weight: 400;
+        line-height: 122%;
+        text-align: center;
+
+        position: absolute;
+        top: 126px;
+        left: 397px;
+    }
+
+    @include laptop() {
+        &__subtitle {
+            font-size: $main-font-size;
+            left: 405px;
+        }
+    }
+
+    @include tablet() {
+        &__subtitle {
+            font-size: 1.7346vw;
+            top: 8.1632vw;
+            left: 30.6vw;
+        }
+    }
+
+    @include mobile {
+        &__subtitle {
+            font-size: vwm(15px);
+            top: vwm(50px);
+            left: vwm(215px);
+
+            width: vwm(151px);
+        }
+    }
+
+    &__sub-subtitle {
+        position: absolute;
+        top: 275px;
+        left: 690px;
+
+        font-size: $main-font-size;
+        font-weight: 400;
+        line-height: 122%;
+
+        transform: rotate(-23.711deg);
+
+        padding: 4px 15px;
+
+        background-color: $main-color;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    @include laptop() {
+        &__sub-subtitle {
+            font-size: $main-font-size;
+            top: 250px;
+            left: 515px;
+        }
+    }
+
+    @include tablet() {
+        &__sub-subtitle {
+            font-size: 1.7346vw;
+
+            top: 71%;
+            left: 16.8367vw;
+
+            border-radius: 1.02vw;
+        }
+    }
+
+    @include mobile {
+        &__sub-subtitle {
+            font-size: vwm(12px);
+
+            top: vwm(238px);
+            left: vwm(90px);
+
+            padding: vwm(3px) vwm(10px);
+
+            border-radius: vwm(10px);
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        padding: 16px 48px;
+        font-size: 1.875rem;
+        transition: 0.5s ease;
+
+        &:hover {
+            transform: translateY(-3px) scale(1.05);
+            transition: 0.5s ease;
+        }
+    }
+
+    @include tablet() {
+        &__button {
+            font-size: 2.44898vw;
+            padding: 1.6326vw 4.8979vw;
+        }
+    }
+
+    @include mobile {
+        &__button {
+            font-size: vwm(16px);
+            padding: vwm(10px) vwm(27px);
+
+            margin: 0 auto;
+
+            border-radius: vwm(10px);
+        }
+    }
+}
+
+// photo a girl
+
+.main-photo__img-desktop {
+    position: absolute;
+    top: 235px;
+    right: 0;
+
+    width: 318px;
+}
+
+.main-photo__img {
+    display: none;
+    position: absolute;
+    z-index: -1;
+    top: 105px;
+    right: 0px;
+}
+
+@include laptop {
+    .main-photo__img-desktop {
+        top: 200px;
+        width: 280px;
+    }
+}
+
+@include tablet {
+    .main-photo__img-desktop {
+        display: none;
+    }
+    .main-photo__img {
+        display: block;
+        top: 10vw;
+        right: 7vw;
+        width: 31.2vw;
+        height: 58.8vw;
+    }
+}
+
+@include mobile {
+    .main-photo__img {
+        display: block;
+        top: vwm(150px);
+        right: vwm(0px);
+        width: vwm(179px);
+        height: vwm(335px);
+    }
+}

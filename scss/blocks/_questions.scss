@@ -1,0 +1,331 @@
+.questions {
+    padding-top: 150px;
+}
+
+@include mobile {
+    .questions {
+        position: relative;
+    }
+
+    .questions::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -5%;
+
+        width: vwm(425px);
+        height: vwm(605px);
+        border-radius: vwm(605px);
+        background: radial-gradient(
+            43.25% 43.25% at 50% 50%,
+            rgba(118, 0, 173, 0.2) 0%,
+            rgba(24, 24, 24, 0.2) 100%
+        );
+    }
+}
+
+@include tablet {
+    .questions {
+        padding-top: 8.2vw;
+    }
+}
+
+@include mobile {
+    .questions {
+        padding-top: vwm(60px);
+    }
+}
+
+.questions-title {
+    text-align: right;
+}
+.question-img {
+    display: flex;
+    position: relative;
+    // .question-img__question
+
+    &__question {
+        margin-right: 61px;
+    }
+
+    @include laptop() {
+        &__question {
+            margin-right: 54px;
+        }
+    }
+
+    // .question-img__question-item
+
+    // need add display block/flex
+
+    &__question-item {
+        position: relative;
+
+        width: 793px;
+        min-height: 120px;
+
+        overflow: hidden;
+
+        padding: 40px 45px;
+
+        border-bottom: 3px solid $main-color;
+        &:nth-child(1) {
+            border-top: 3px solid $main-color;
+        }
+    }
+
+    @include laptop() {
+        &__question-item {
+            width: 700px;
+        }
+    }
+
+    @include tablet {
+        &__question {
+            margin-right: 0;
+            margin: 0 auto;
+        }
+        &__question-item {
+            width: 83.67vw;
+            min-height: 7.7vw;
+            align-items: center;
+
+            padding: 2.2vw 4.3vw;
+
+            border-bottom: 0.3vw solid $main-color;
+            &:nth-child(1) {
+                border-top: 0.3vw solid $main-color;
+            }
+        }
+    }
+
+    @include mobile {
+        &__question-item {
+            width: vwm(373px);
+            min-height: vwm(52px);
+
+            padding: vwm(15px) vwm(10px);
+
+            border-bottom: vwm(2px) solid $main-color;
+            &:nth-child(1) {
+                border-top: vwm(2px) solid $main-color;
+            }
+        }
+    }
+
+    // .question-img__text
+
+    &__text {
+        font-size: 1.625rem;
+        line-height: 130%;
+        cursor: pointer;
+    }
+
+    @include laptop() {
+        &__text {
+            font-size: $main-title-font-size;
+        }
+    }
+    @include tablet() {
+        &__text {
+            font-size: 2.45vw;
+        }
+    }
+
+    @include mobile {
+        &__text {
+            font-size: vwm(17px);
+        }
+    }
+}
+
+// need to hidden (plus hidden)
+
+.question-img__question-plus {
+    position: absolute;
+    top: 39px;
+    right: 50px;
+    z-index: -1;
+
+    background-image: url('/img/questions/+.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: 0.6s ease;
+    -webkit-transition: -webkit-transform 0.6s ease;
+    width: 35px;
+    height: 35px;
+}
+
+// .question-img__question-item:hover .question-img__question-plus {
+//     transform: scale(1.25);
+//     -webkit-transform: scale(1.25);
+// }
+@include tablet {
+    .question-img__question-plus {
+        top: 2.3vw;
+        right: 3%;
+
+        width: 3.06vw;
+        height: 3.06vw;
+    }
+}
+
+@include mobile {
+    .question-img__question-plus {
+        top: vwm(17px);
+        right: vwm(15px);
+
+        width: vwm(17px);
+        height: vwm(17px);
+    }
+}
+
+.img-container::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: -20%;
+    transform: translate(-50 -50%);
+    z-index: -1;
+
+    width: 363px;
+    height: 465px;
+    border-radius: 465px;
+    background: radial-gradient(
+        43.25% 43.25% at 50% 50%,
+        rgba(118, 0, 173, 0.5) 0%,
+        rgba(24, 24, 24, 0.5) 100%
+    );
+}
+
+@include laptop() {
+    .img-container::before {
+        left: -23%;
+
+        width: 283px;
+        height: 363px;
+    }
+}
+
+// hidden text and cross
+
+.text-hidden-button {
+    margin-top: -40px;
+    display: none;
+    opacity: 0;
+    max-width: 596px;
+
+    margin-right: auto;
+
+    padding-top: 43px;
+}
+
+.text-hidden {
+    font-family: Jost;
+    font-size: $main-font-size;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+@include laptop() {
+    .text-hidden {
+        font-size: 1.125rem;
+        max-width: 520px;
+    }
+}
+
+@include tablet {
+    .text-hidden-button {
+        padding-top: 2.04vw;
+    }
+    .text-hidden {
+        font-size: 2.04vw;
+        max-width: 59.7vw;
+        padding-left: 5.6vw;
+    }
+}
+
+@include mobile {
+    .text-hidden-button {
+        padding-top: vwm(15px);
+    }
+    .text-hidden {
+        font-size: vwm(13px);
+        max-width: vwm(310px);
+        padding-left: 0;
+    }
+}
+
+.img-container {
+    position: sticky;
+    top: 50px;
+
+    margin-top: 100px;
+
+    height: 100%;
+}
+
+@include tablet {
+    .img-container {
+        display: none;
+    }
+}
+
+.question-img__img {
+    display: block;
+    width: 294px;
+    height: 361px;
+}
+
+@include laptop() {
+    .question-img__img {
+        min-width: 220px;
+        height: 302px;
+    }
+}
+
+// change block/flex
+
+.block {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.animation {
+    margin-top: 0px;
+    opacity: 1;
+
+    transition: 1s ease;
+    -webkit-transition: 1s ease;
+}
+.animation-2 {
+    margin-top: -650px;
+    opacity: 0;
+    transition: opacity 0.5s ease, margin 3s ease;
+    -webkit-transition: opacity 0.5s ease, margin 3s ease;
+}
+
+@include tablet {
+    .animation-2 {
+        margin-top: -60%;
+        transition: opacity 0.5s ease, margin-top 2s ease;
+        -webkit-transition: opacity 0.5s ease, margin 2s ease;
+    }
+}
+
+@include mobile {
+    .animation-2 {
+        margin-top: -60%;
+        transition: opacity 0.5s ease, margin-top 1.5s ease;
+        -webkit-transition: opacity 0.5s ease, margin 1.5s ease;
+    }
+}
+////////////////////////////
+///
+.questions-fill-plus {
+    background-image: url('/img/questions/fill+.svg');
+}
